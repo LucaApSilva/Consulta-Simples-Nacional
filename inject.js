@@ -15,14 +15,13 @@ search.addEventListener('click', async () => {
     try {
 
         if (!value) {
-            console.log('informe os cnpjs')
 
             alert('Informe o CNPJ!')
 
             return
         }
 
-        const validation = /\W|_|[A-z]/
+        const validation = /[, /\W|_|[A-z]]/
 
         if (validation.test(value) | value.length < 14) {
 
@@ -38,7 +37,7 @@ search.addEventListener('click', async () => {
             list = null
         }
 
-        const response = await fetch('http://localhost:3000/search-cnpj', {
+        const response = await fetch(`http://localhost:3000/search-cnpj`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -53,7 +52,6 @@ search.addEventListener('click', async () => {
 
         if (data.length > 1) {
             for (const item of data) {
-                console.log(data)
                 const li = document.createElement("li")
                 li.textContent = `Cnpj: ${item.Cnpj} SimplesNacional: ${item.SimplesNacional}`
                 list.appendChild(li)
