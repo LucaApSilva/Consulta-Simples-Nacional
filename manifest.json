@@ -1,9 +1,0 @@
-{
-    "manifest_version": 3,
-    "name": "Consulta Simples Nacinal",
-    "version": "1.0.0",
-    "description": "Consulta a opção ao Simples Nacional de vários CNPJs de uma unica vez!",
-    "action": {
-        "default_popup": "index.html"
-    }
-}
