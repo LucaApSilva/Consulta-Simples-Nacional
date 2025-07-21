@@ -2,6 +2,8 @@ const inputCnpj = document.querySelector('.input__cnpj')
 const search = document.querySelector('.button')
 const body = document.querySelector('body')
 const spinner = document.getElementById('spinner')
+const container = document.querySelector('.container')
+let list = document.querySelector('.list__cnpjs')
 
 search.addEventListener('click', async () => {
 
@@ -10,12 +12,31 @@ search.addEventListener('click', async () => {
     spinner.classList.remove('hidden')
     search.classList.add('hidden__button')
 
-    if (!value) {
-        console.log('informe os cnpjs')
-
-        return
-    }
     try {
+
+        if (!value) {
+            console.log('informe os cnpjs')
+
+            alert('Informe o CNPJ!')
+
+            return
+        }
+
+        const validation = /\W|_|[A-z]/
+
+        if (validation.test(value) | value.length < 14) {
+
+            alert('Dados incorretos!')
+
+            return
+        }
+
+        if (list) {
+
+            list.remove()
+
+            list = null
+        }
 
         const response = await fetch('http://localhost:3000/search-cnpj', {
             method: 'POST',
@@ -27,7 +48,7 @@ search.addEventListener('click', async () => {
 
         const data = await response.json()
 
-        const list = document.createElement('div')
+        list = document.createElement('div')
         list.className = 'list__cnpjs'
 
         if (data.length > 1) {
@@ -45,7 +66,7 @@ search.addEventListener('click', async () => {
             list.appendChild(li)
         }
 
-        body.appendChild(list)
+        container.appendChild(list)
 
 
     } catch (error) {

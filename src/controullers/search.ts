@@ -56,4 +56,3 @@ export async function searchCnpj(req: Request, res: Response) {
 
 
 }
-

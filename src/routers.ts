@@ -5,5 +5,4 @@ const router = Router()
 
 router.post('/search-cnpj', searchCnpj)
 
-
 export default router
