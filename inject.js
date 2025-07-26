@@ -37,7 +37,7 @@ search.addEventListener('click', async () => {
             list = null
         }
 
-        const response = await fetch(`https://consultasnbackend-production.up.railway.app`, {
+        const response = await fetch(`https://consultasnbackend-production.up.railway.app/search-cnpj`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
