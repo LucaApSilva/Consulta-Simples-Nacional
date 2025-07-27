@@ -8,7 +8,7 @@ body {
 
 .container {
     display: flex;
-    width: 800px;
+    width: 80%;
     height: 100vh;
     flex-direction: column;
     align-items: center;
@@ -17,18 +17,26 @@ body {
     border-radius: 50px;
 }
 
+.li {
+    text-align: start;
+    font-size: 70%;
+    list-style: disc;
+}
+
 h1 {
-    font-size: 35px;
+    font-size: 100%;
+    text-decoration: underline;
 }
 
 .input__cnpj {
-    width: 400px;
-    height: 300px;
+    width: 50%;
+    height: 100%;
     border-radius: 5px;
-    border: none;
+    border: solid #f3f3f3;
     height: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 70%;
+    font-size: 50%;
+    margin-top: 25px;
 }
 
 .input__cnpj:hover {
@@ -38,7 +46,7 @@ h1 {
 }
 
 .input__cnpj::placeholder {
-    font-size: 13px;
+    font-size: 100%;
 }
 
 .button {
@@ -47,8 +55,9 @@ h1 {
     border: none;
     border-radius: 1000px;
     color: white;
-    height: 25px;
-    width: 100px;
+    height: 3%;
+    width: 24%;
+    font-size: 80%;
 }
 
 .button:hover {
@@ -60,7 +69,7 @@ h1 {
     list-style: none;
     margin-top: 20px;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 65%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
