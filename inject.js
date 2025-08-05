@@ -21,9 +21,18 @@ search.addEventListener('click', async () => {
             return
         }
 
-        const validation = /[, /\W|_|[A-z]]/
+        const validation = /^[0-9, ]+$/
 
-        if (validation.test(value) | value.length < 14) {
+
+
+        if (validation.test(value) === false) {
+
+            alert('Dados incorretos!')
+
+            return
+        }
+
+        if (value.length < 14) {
 
             alert('Dados incorretos!')
 
