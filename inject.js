@@ -46,7 +46,7 @@ search.addEventListener('click', async () => {
             list = null
         }
 
-        const response = await fetch(`https://consultasnbackend-production.up.railway.app/search-cnpj`, {
+        const response = await fetch(`https://consultasn-backend.vercel.app/search-cnpj`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
