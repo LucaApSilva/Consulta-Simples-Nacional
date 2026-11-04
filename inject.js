@@ -46,13 +46,16 @@ search.addEventListener('click', async () => {
             list = null
         }
 
-        const response = await fetch(`https://consultasn-backend.vercel.app/search-cnpj`, {
+        const response = await fetch(`https://consulta-sn-backend.vercel.app/search-cnpj`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ cnpjs: value })
         })
+
+        console.log("Status:", response.status);
+        console.log("Content-Type:", response.headers.get("content-type"));
 
         const data = await response.json()
 
@@ -80,6 +83,7 @@ search.addEventListener('click', async () => {
 
         console.log('aconteceu algum erro kkk')
         console.log(error)
+        console.log(value)
 
     } finally {
         spinner.classList.add('hidden')
