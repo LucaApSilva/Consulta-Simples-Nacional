@@ -21,7 +21,7 @@ search.addEventListener('click', async () => {
             return
         }
 
-        const validation = /^[0-9, ]+$/
+        const validation = /^[0-9, ;]+$/
 
 
 
